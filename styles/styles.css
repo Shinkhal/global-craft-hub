@@ -1,0 +1,96 @@
+/* Custom styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #f4d7d7, #dcc3fc);
+}
+
+header .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+.hero-section {
+    height: 80dvh; 
+    background-color: #e9ecef; 
+}
+
+.carousel-container {
+    max-width: 900px; /* Limit the carousel width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+.offer-text {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.offer-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.navbar .nav-link {
+    margin-right: 10px;
+}
+
+.nav-icons {
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+main{
+    min-height: 70dvh;
+}
+
+.tick-icon {
+    font-size: 3rem;
+    color: green;
+    animation: tickAnimation 2s ease-in-out;
+}
+
+@keyframes tickAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.carousel-item{
+    max-width: 100%;
+    height: 600px;
+    padding: 20px;
+}
