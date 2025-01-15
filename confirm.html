@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f4d7d7, #dcc3fc);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #5a5af0;
+        }
+
+        .navbar-light .nav-link {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .navbar-light .nav-link:hover {
+            color: #5a5af0;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .custom-card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .custom-card h4 {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #5a5af0;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .confirmed-address {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Global Craft Hub</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <h2 class="text-center mb-4">Order Confirmation</h2>
+
+        <div id="cart-summary" class="custom-card">
+            <h4>Your Cart Items</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+
+        <div id="user-details" class="custom-card">
+            <h4>Enter Your Details</h4>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="user-name" class="form-label">Name</label>
+                    <input type="text" id="user-name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="user-phone" class="form-label">Phone</label>
+                    <div class="input-group">
+                        <select id="country-code" class="form-select">
+                            <option value="+91" selected>+91 (India)</option>
+                            <option value="+1">+1 (USA)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+61">+61 (Australia)</option>
+                            <option value="+81">+81 (Japan)</option>
+                        </select>
+                        <input type="tel" id="user-phone" class="form-control" placeholder="Enter phone number" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="user-email" class="form-label">Email</label>
+                <input type="email" id="user-email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="user-address" class="form-label">Address</label>
+                <textarea id="user-address" class="form-control" placeholder="Enter your address" rows="3" required></textarea>
+            </div>
+            <button id="confirm-address-btn" class="btn btn-primary w-100">Confirm Address</button>
+        </div>
+
+        <div id="confirmed-address" class="d-none">
+            <h4>Confirmed Address</h4>
+            <div class="confirmed-address">
+                <p><strong>Name:</strong> <span id="display-name"></span></p>
+                <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+                <p><strong>Email:</strong> <span id="display-email"></span></p>
+                <p><strong>Address:</strong> <span id="display-address"></span></p>
+            </div>
+            <button id="place-order-btn" class="btn btn-success w-100 mt-3">Place Order</button>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <p>&copy; 2024 Global Craft Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartItemsTable = document.getElementById("cart-items");
+            const confirmAddressBtn = document.getElementById("confirm-address-btn");
+            const placeOrderBtn = document.getElementById("place-order-btn");
+            const confirmedAddressSection = document.getElementById("confirmed-address");
+            const displayName = document.getElementById("display-name");
+            const displayPhone = document.getElementById("display-phone");
+            const displayEmail = document.getElementById("display-email");
+            const displayAddress = document.getElementById("display-address");
+
+            function renderCartItems() {
+                cartItemsTable.innerHTML = "";
+                if (cart.length === 0) {
+                    cartItemsTable.innerHTML = `
+                        <tr>
+                            <td colspan="4" class="text-center">Your cart is empty!</td>
+                        </tr>
+                    `;
+                    confirmAddressBtn.disabled = true;
+                } else {
+                    let totalAmount = 0;
+                    cart.forEach(product => {
+                        const total = product.price * product.quantity;
+                        totalAmount += total;
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${product.name}</td>
+                            <td>₹${product.price}</td>
+                            <td>${product.quantity}</td>
+                            <td>₹${total}</td>
+                        `;
+                        cartItemsTable.appendChild(row);
+                    });
+
+                    const totalRow = document.createElement("tr");
+                    totalRow.innerHTML = `
+                        <td colspan="3" class="text-end"><strong>Total Amount</strong></td>
+                        <td><strong>₹${totalAmount}</strong></td>
+                    `;
+                    cartItemsTable.appendChild(totalRow);
+                }
+            }
+
+            confirmAddressBtn.addEventListener("click", () => {
+                const userName = document.getElementById("user-name").value.trim();
+                const userPhone = document.getElementById("user-phone").value.trim();
+                const countryCode = document.getElementById("country-code").value;
+                const userEmail = document.getElementById("user-email").value.trim();
+                const userAddress = document.getElementById("user-address").value.trim();
+
+                if (!userName || !userPhone || !userEmail || !userAddress) {
+                    alert("Please fill in all details to confirm.");
+                    return;
+                }
+
+                displayName.textContent = userName;
+                displayPhone.textContent = `${countryCode} ${userPhone}`;
+                displayEmail.textContent = userEmail;
+                displayAddress.textContent = userAddress;
+
+                confirmedAddressSection.classList.remove("d-none");
+                confirmAddressBtn.disabled = true;
+            });
+
+            placeOrderBtn.addEventListener("click", () => {
+                const orderId = Math.floor(Math.random() * 100000);
+                window.location.href = `success.html?orderId=${orderId}&name=${encodeURIComponent(displayName.textContent)}&phone=${encodeURIComponent(displayPhone.textContent)}&email=${encodeURIComponent(displayEmail.textContent)}&address=${encodeURIComponent(displayAddress.textContent)}`;
+            });
+
+            renderCartItems();
+        });
+    </script>
+</body>
+</html>

@@ -67,13 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.getElementById('checkout-btn').addEventListener('click', function () {
-            // Here, you can generate an order ID or fetch it from the backend
-            const orderId = Math.floor(Math.random() * 100000); // Example random order ID
-        
-            // Redirect to success page with the order ID
-            window.location.href = `success.html?orderId=${orderId}`;
+            if (cart.length === 0) {
+                // Show error message
+                alert("Your cart is empty. Please add items to your cart to proceed.");
+            } else {
+                // Generate an order ID or fetch it from the backend
+                const orderId = Math.floor(Math.random() * 100000); // Example random order ID
+            
+                // Redirect to success page with the order ID
+                window.location.href = `confirm.html`;
+            }
         });
-        
     }
 
     renderCart();

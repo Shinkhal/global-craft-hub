@@ -1,107 +1,79 @@
 [
     {
         "id": 1,
-        "name": "Handmade Pottery",
-        "price": 1500,
+        "name": "Bharni Style",
+        "price": 1599,
         "rating": 4.5,
-        "image": "images/pottery.jpeg"
+        "image": "images/bharni.jpg"
     },
     {
         "id": 2,
-        "name": "Wooden Carving",
-        "price": 2500,
+        "name": "Katchni Style",
+        "price": 1599,
         "rating": 4.7,
-        "image": "images/carving.webp"
+        "image": "images/katchni.jpg"
     },
     {
         "id": 3,
-        "name": "Embroidered Cushion",
-        "price": 1200,
+        "name": "Gonda Style",
+        "price": 7299,
         "rating": 4.2,
-        "image": "images/cushion.webp"
+        "image": "images/gonda.jpg"
     },
     {
         "id": 4,
-        "name": "Handwoven Rug",
-        "price": 3500,
+        "name": "Tantrik  Style",
+        "price": 1799,
         "rating": 4.8,
-        "image": "images/rug.jpeg"
+        "image": "images/tantrik.jpg"
     },
     {
         "id": 5,
-        "name": "Terracotta Vase",
-        "price": 800,
+        "name": "Handmade Pottery",
+        "price": 799,
         "rating": 4.0,
-        "image": "images/vase.jpeg"
+        "image": "images/handmade.jpg"
     },
     {
         "id": 6,
-        "name": "Bamboo Basket",
-        "price": 600,
+        "name": "Brass Cutting",
+        "price": 1599,
         "rating": 4.3,
-        "image": "images/basket.webp"
+        "image": "images/brass.jpg"
     },
     {
         "id": 7,
-        "name": "Silk Scarf",
-        "price": 2000,
+        "name": "Silver Oxidised Braclete",
+        "price": 3599,
         "rating": 4.6,
-        "image": "images/scarf.jpeg"
+        "image": "images/snake.jpg"
     },
     {
         "id": 8,
-        "name": "Clay Tea Set",
-        "price": 1800,
+        "name": "Arjun Rath",
+        "price": 9599,
         "rating": 4.9,
-        "image": "images/tea.jpeg"
+        "image": "images/rath.jpg"
     },
     {
         "id": 9,
-        "name": "Beaded Jewelry",
-        "price": 950,
+        "name": "Ban Bati Metal",
+        "price": 4199,
         "rating": 4.4,
-        "image": "images/beaded.webp"
+        "image": "images/bati.jpg"
     },
     {
         "id": 10,
-        "name": "Hand-Painted Tray",
-        "price": 1300,
+        "name": "Ethinic Bell Metal Tray",
+        "price": 759,
         "rating": 4.1,
-        "image": "images/tray.jpeg"
+        "image": "images/metaltray.jpg"
     },
     {
         "id": 11,
-        "name": "Leather Wallet",
-        "price": 2500,
+        "name": "Kadhai",
+        "price": 1299,
         "rating": 4.5,
-        "image": "images/wallet.webp"
-    },
-    {
-        "id": 12,
-        "name": "Knitted Blanket",
-        "price": 4000,
-        "rating": 4.8,
-        "image": "images/blanket.jpg"
-    },
-    {
-        "id": 13,
-        "name": "Metal Wall Art",
-        "price": 5000,
-        "rating": 4.9,
-        "image": "images/metal.webp"
-    },
-    {
-        "id": 14,
-        "name": "Hand-Dyed Fabric",
-        "price": 1100,
-        "rating": 4.2,
-        "image": "images/deying.jpeg"
-    },
-    {
-        "id": 15,
-        "name": "Traditional Doll",
-        "price": 900,
-        "rating": 4.3,
-        "image": "images/doll.jpg"
+        "image": "images/kadai.jpg"
     }
 ]
